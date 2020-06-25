@@ -34,6 +34,8 @@ class CreateTransactionService {
         title: category,
       });
       await categoryRepository.save(newCategory);
+    } else {
+      newCategory = categoryFound;
     }
 
     const transaction = transactionsRepository.create({

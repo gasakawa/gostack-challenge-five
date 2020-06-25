@@ -14,13 +14,13 @@ class TransactionsRepository extends Repository<Transaction> {
     const transactions = await this.find();
     const income = transactions
       .filter(transaction => transaction.type === 'income')
-      .map(transaction => transaction.value)
-      .reduce((total, current) => total + current, 0);
+      .map(transaction => Number(transaction.value))
+      .reduce((acum, current) => acum + current, 0);
 
     const outcome = transactions
       .filter(transaction => transaction.type === 'outcome')
-      .map(transaction => transaction.value)
-      .reduce((total, current) => total + current, 0);
+      .map(transaction => Number(transaction.value))
+      .reduce((acum, current) => acum + current, 0);
 
     const total = income - outcome;
 
