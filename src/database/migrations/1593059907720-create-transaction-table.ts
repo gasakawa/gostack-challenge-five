@@ -1,11 +1,11 @@
 import {
   MigrationInterface,
   QueryRunner,
-  Table,
   TableForeignKey,
+  Table,
 } from 'typeorm';
 
-export default class createTransactionTable1593045080588
+export default class createTransactionTable1593059907720
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(

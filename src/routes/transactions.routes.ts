@@ -58,7 +58,7 @@ transactionsRouter.delete('/:id', async (request, response) => {
 
 transactionsRouter.post(
   '/import',
-  upload.single('batch'),
+  upload.single('file'),
   async (request, response) => {
     const importTransactionsService = new ImportTransactionsService();
     const transactions = await importTransactionsService.execute(
